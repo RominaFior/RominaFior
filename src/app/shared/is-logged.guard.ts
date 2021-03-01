@@ -4,7 +4,6 @@ import {
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
   UrlTree,
-  Router,
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
@@ -15,7 +14,7 @@ import { Location } from '@angular/common';
   providedIn: 'root',
 })
 export class IsLoggedGuard implements CanActivate {
-  constructor(private authSvc: AuthService, private router: Router, private location:Location) {}
+  constructor(private authSvc: AuthService, private location: Location) {}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot

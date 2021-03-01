@@ -4,7 +4,6 @@ import {
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
   UrlTree,
-  Router,
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
@@ -15,11 +14,7 @@ import { Location } from '@angular/common';
   providedIn: 'root',
 })
 export class KitchenGuard implements CanActivate {
-  constructor(
-    private authSvc: AuthService,
-    private router: Router,
-    private location: Location
-  ) {}
+  constructor(private authSvc: AuthService, private location: Location) {}
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
