@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Register employee</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="!created">
+    <form>
+      <ion-item lines="full">
+        <ion-label position="floating"
+          >E-Mail <ion-text color="danger">*</ion-text></ion-label
+        >
+        <ion-input required #email type="text"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="floating"
+          >Password <ion-text color="danger">*</ion-text></ion-label
+        >
+        <ion-input required #password type="password"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label>Role</ion-label>
+        <ion-select name="roles" (ionChange)="onChange($event)">
+          <ion-select-option value="kitchen">Kitchen</ion-select-option>
+          <ion-select-option value="admin">Admin</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button
+        color="primary"
+        type="submit"
+        (click)="onRegister(email, password)"
+        expand="block"
+      >
+        Register
+      </ion-button>
+    </form>
+
+    <ion-button type="submit" (click)="authSvc.logout()" expand="block"
+      >Logout</ion-button
+    >
+  </div>
+  <div *ngIf="created">
+    <ion-row>
+      <ion-col size="12">
+        <p>The user has been created successfully!</p>
+      </ion-col>
+    </ion-row>
+<ion-row>
+    <ion-col>
+      <p class="ion-text-end">
+        <a routerLink="/login-staff">Login employee</a>
+      </p>
+    </ion-col>
+  </ion-row>
+
+  </div>
+</ion-content>

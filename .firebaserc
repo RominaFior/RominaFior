@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "demohotel-aa753": {
+      "hosting": {
+        "app": [
+          "demohotel-aa753"
+        ]
+      }
+    }
+  }
+}

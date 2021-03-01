@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login employee</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating"
+        >E-Mail <ion-text color="danger">*</ion-text></ion-label
+      >
+      <ion-input required #email type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"
+        >Password <ion-text color="danger">*</ion-text></ion-label
+      >
+      <ion-input required #password type="password"></ion-input>
+    </ion-item>
+    <ion-button
+      color="primary"
+      type="submit"
+      (click)="onLoginEmployee(email, password)"
+      expand="block"
+    >
+      Login
+    </ion-button>
+    <ion-row *ngIf="error">
+      <ion-col> {{error}} </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p class="ion-text-end">
+          <a routerLink="/forgot-password">Forgot password?</a>
+        </p>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  constructor(
+    private authSvc: AuthService,
+    private router: Router
+  ) {}
 
-  constructor() {}
+  async onLogout() {
+    try {
+      this.authSvc.logout();
+      this.router.navigate(['/login']);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
 }
