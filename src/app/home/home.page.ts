@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -9,7 +10,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class HomePage {
   constructor(
-    private authSvc: AuthService,
+    public authSvc: AuthService,
     private router: Router
   ) {}
 

@@ -16,6 +16,6 @@ import { RegisterStaffPage } from '../register-staff/register-staff.page';
     IonicModule,
     AdminPageRoutingModule
   ],
-  declarations: [AdminPage, RegisterStaffPage]
+  declarations: [AdminPage]
 })
 export class AdminPageModule {}

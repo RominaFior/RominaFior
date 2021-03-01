@@ -8,7 +8,7 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./kitchen.page.scss'],
 })
 export class KitchenPage implements OnInit {
-  constructor(private authSvc: AuthService, private router: Router) {}
+  constructor(public authSvc: AuthService, private router: Router) {}
 
   ngOnInit() {}
   async onLogout() {
