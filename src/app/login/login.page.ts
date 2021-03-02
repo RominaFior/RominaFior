@@ -81,7 +81,7 @@ export class LoginPage implements OnInit, OnDestroy {
             this.authSvc.logout();
             this.unauthorized = true;
             setTimeout(() => {
-              this.unauthorized =false,
+              this.unauthorized = false, this.isSubmitted = false,
               this.loginForm.reset();
             }, 3000);
           }
