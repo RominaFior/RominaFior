@@ -35,10 +35,6 @@
         Register
       </ion-button>
     </form>
-
-    <ion-button type="submit" (click)="authSvc.logout()" expand="block"
-      >Logout</ion-button
-    >
   </div>
   <div *ngIf="created">
     <ion-row>
@@ -46,13 +42,8 @@
         <p>The user has been created successfully!</p>
       </ion-col>
     </ion-row>
-<ion-row>
-    <ion-col>
-      <p class="ion-text-end">
-        <a routerLink="/login-staff">Login employee</a>
-      </p>
-    </ion-col>
-  </ion-row>
-
   </div>
+  <ion-button type="submit" (click)="authSvc.logout()" expand="block"
+      >Logout</ion-button
+    >
 </ion-content>

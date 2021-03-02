@@ -5,45 +5,66 @@
 </ion-header>
 
 <ion-content>
-  <form>
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm()" novalidate>
     <ion-item lines="full">
       <ion-label position="floating"
         >E-Mail <ion-text color="danger">*</ion-text></ion-label
       >
-      <ion-input required #email type="text"></ion-input>
+      <ion-input formControlName="email" type="email" required></ion-input>
     </ion-item>
+    <span
+      class="error ion-padding"
+      *ngIf="isSubmitted && errorControl.email.errors?.required"
+    >
+      Email is required.
+    </span>
+    <span
+      class="error ion-padding"
+      *ngIf="isSubmitted && errorControl.email.errors?.pattern"
+    >
+      Please provide valid email id.
+    </span>
+
     <ion-item>
       <ion-label position="floating"
         >Password <ion-text color="danger">*</ion-text></ion-label
       >
-      <ion-input required #password type="password"></ion-input>
+      <ion-input
+        formControlName="password"
+        type="password"
+        required
+      ></ion-input>
     </ion-item>
-    <ion-button
-      color="primary"
-      type="submit"
-      (click)="onLogin(email, password)"
-      expand="block"
+    <span
+      class="error ion-padding"
+      *ngIf="isSubmitted && errorControl.password.errors?.required"
     >
+      Password is required.
+    </span>
+
+    <span class="error" *ngIf="unauthorized"> Unauthorized User </span>
+
+    <ion-button color="primary" type="submit" expand="block">
       Login
     </ion-button>
-    <ion-row *ngIf="error">
+    <ion-row>
       <ion-col>
-        {{error}}
+        <p class="ion-text-end">
+          <a routerLink="/forgot-password">Forgot password?</a>
+        </p>
       </ion-col>
     </ion-row>
-     <ion-row>
-    <ion-col>
-      <p class="ion-text-end">
-        <a routerLink="/forgot-password">Forgot password?</a>
-      </p>
-    </ion-col>
-  </ion-row>
     <span class="divider line one-line" class="center-span">or</span>
-    <ion-button type="submit" (click)="onLoginGoogle()" expand="block" color="danger">
+    <ion-button
+      type="submit"
+      (click)="onLoginGoogle()"
+      expand="block"
+      color="danger"
+    >
       Login with Google
     </ion-button>
   </form>
- 
+
   <ion-row>
     <ion-col>
       <p class="ion-text-end">

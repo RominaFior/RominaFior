@@ -18,7 +18,7 @@ export class RegisterStaffPage implements OnDestroy {
   role: string;
   created = false;
   constructor(
-    private authSvc: AuthService,
+    public authSvc: AuthService,
     private afs: AngularFirestore
   ) {}
 

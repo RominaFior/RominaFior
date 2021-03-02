@@ -21,13 +21,13 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () =>
       import('./login/login.module').then((m) => m.LoginPageModule),
-    canActivate: [IsLoggedGuard],
+    //canActivate: [IsLoggedGuard],
   },
   {
     path: 'register',
     loadChildren: () =>
       import('./register/register.module').then((m) => m.RegisterPageModule),
-    canActivate: [IsLoggedGuard],
+   canActivate: [IsLoggedGuard],
   },
   {
     path: 'admin',
@@ -61,7 +61,7 @@ const routes: Routes = [
       import('./register-staff/register-staff.module').then(
         (m) => m.RegisterStaffPageModule
       ),
-    canActivate: [IsLoggedGuard],
+   // canActivate: [IsLoggedGuard],
   },
   {
     path: 'login-staff',
@@ -69,7 +69,7 @@ const routes: Routes = [
       import('./login-staff/login-staff.module').then(
         (m) => m.LoginStaffPageModule
       ),
-    canActivate: [IsLoggedGuard],
+   // canActivate: [IsLoggedGuard],
   },
 ];
 

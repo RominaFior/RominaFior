@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { AdminPageRoutingModule } from './admin-routing.module';
 
 import { AdminPage } from './admin.page';
-import { RegisterStaffPage } from '../register-staff/register-staff.page';
 
 @NgModule({
   imports: [
